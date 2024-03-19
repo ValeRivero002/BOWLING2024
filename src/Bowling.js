@@ -1,17 +1,13 @@
 export default class Game {
   constructor() {
-    this.rolls = [];
+    this.totalScore = 0; // Cambiar el nombre de la propiedad score a totalScore
   }
 
   roll(pins) {
-    this.rolls.push(pins);
+    this.totalScore += pins; // Actualizar la propiedad totalScore
   }
 
   score() {
-    let score = 0;
-    for (let i = 0; i < this.rolls.length; i++) {
-      score += this.rolls[i];
-    }
-    return score;
+    return this.totalScore; // Devolver el valor de totalScore
   }
 }

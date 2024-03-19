@@ -5,6 +5,15 @@ test('Deberia devolver score 0', () => {
     game.roll(0);
   }
 
-  // Verificar si el puntaje es 0
   expect(game.score()).toBe(0);
+});
+test('Debería devolver un puntaje de 20 para un juego donde se derribó 1 pin en cada roll', () => {
+  const juego = new Game(); 
+
+
+  for (let i = 0; i < 20; i++) {
+    juego.roll(1);
+  }
+
+  expect(juego.score()).toBe(20);
 });
